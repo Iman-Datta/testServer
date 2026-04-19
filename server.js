@@ -21,7 +21,7 @@ app.get("/", (req, res) => {
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Iman Server</title>
+<title>Test Server</title>
 
 <style>
 :root {
