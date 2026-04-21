@@ -225,10 +225,6 @@ body {
     <div><span class="method">GET</span> /health</div>
     <a class="btn" href="/health" target="_blank">open</a>
   </div>
-  <div class="endpoint">
-    <div><span class="method">GET</span> /info</div>
-    <a class="btn" href="/info" target="_blank">open</a>
-  </div>
 </div>
 
 <div class="footer">
@@ -252,20 +248,6 @@ setInterval(() => {
 
 app.get("/health", (req, res) => {
   res.json({ status: "ok", uptime: getUptime() });
-});
-
-app.get("/info", (req, res) => {
-  res.json({
-    host: os.hostname(),
-    platform: os.platform(),
-    arch: os.arch(),
-    nodeVersion: process.version,
-    uptime: getUptime(),
-    memory: {
-      total: `${Math.round(os.totalmem() / 1024 / 1024)} MB`,
-      free: `${Math.round(os.freemem() / 1024 / 1024)} MB`,
-    },
-  });
 });
 
 app.listen(PORT, "0.0.0.0", () => {
